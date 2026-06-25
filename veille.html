@@ -92,7 +92,7 @@
   <div class="panel" id="livePanel">
     <h2 class="sect" style="margin:0 0 6px">Alertes Google en direct</h2>
     <p style="font-size:13px;color:var(--muted);margin-bottom:8px">Les alertes Google de Paris'Com Sup sont connectées : les résultats se chargent automatiquement. Cliquez sur une alerte pour la filtrer, ou collez l'URL d'un autre flux RSS.</p>
-    <div style="font-size:12px;color:var(--muted);margin-bottom:8px"><b style="color:var(--blue)">Flux RSS &amp; mots-clés surveillés :</b> « Paris'Com Sup » · « Sup de Pub » · « alternance communication Paris »</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:8px"><b style="color:var(--blue)">Flux RSS &amp; mots-clés surveillés :</b> Paris'Com Sup · Sup de Pub · alternance communication Paris · ESGCI · IIM · Bachelor webmarketing Paris · IA générative marketing <span style="color:#9aa6b2">(Google Alerts + Google News)</span></div>
     <div id="alertPresets" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px"></div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
       <input id="rssUrl" type="text" placeholder="https://www.google.com/alerts/feeds/…" style="flex:1;min-width:260px">
@@ -135,7 +135,11 @@
 const ALERTS=[
   {name:"Paris'Com Sup",url:"https://www.google.com/alerts/feeds/08483093160244046144/7932712092796840281"},
   {name:"Sup de Pub",url:"https://www.google.com/alerts/feeds/08483093160244046144/7932712092796840933"},
-  {name:"Alternance communication Paris",url:"https://www.google.com/alerts/feeds/08483093160244046144/13779993153937980769"}
+  {name:"Alternance communication Paris",url:"https://www.google.com/alerts/feeds/08483093160244046144/13779993153937980769"},
+  {name:"ESGCI",url:"https://news.google.com/rss/search?q=ESGCI%20communication&hl=fr&gl=FR&ceid=FR:fr"},
+  {name:"IIM",url:"https://news.google.com/rss/search?q=IIM%20communication%20digitale&hl=fr&gl=FR&ceid=FR:fr"},
+  {name:"Bachelor webmarketing Paris",url:"https://news.google.com/rss/search?q=bachelor%20webmarketing%20Paris&hl=fr&gl=FR&ceid=FR:fr"},
+  {name:"IA générative marketing",url:"https://news.google.com/rss/search?q=IA%20g%C3%A9n%C3%A9rative%20marketing&hl=fr&gl=FR&ceid=FR:fr"}
 ];
 const DATA = [
   {axe:"conc",titre:"Sup de Pub — Titre RNCP 40893 renouvelé",info:"Bachelor de niveau 6 (RNCP 40893) renouvelé le 25/06/2025 pour 3 ans. Alternance dès la 3<sup>e</sup> année, large réseau d'entreprises.",interet:"h",action:"Aligner notre discours RNCP et alternance ; insister sur l'accompagnement individualisé.",src:"supdepub.com",url:"https://www.supdepub.com"},
