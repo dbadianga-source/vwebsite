@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; candidature — Paris'Com Sup</title>
+<style>
+  :root{--blue:#1F4E79;--acc:#2E75B6;--gold:#E0A800;--bg:#F6F8FB;--ink:#1f2733;--muted:#6b7480;--line:#e6eaf0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  .topnav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 1px 8px rgba(20,40,80,.05)}
+  .topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--blue);font-size:18px}
+  .logomark{width:38px;height:38px;border-radius:9px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800}
+  .navlinks{display:flex;gap:22px;align-items:center;font-size:14.5px;font-weight:600}
+  .navlinks a{color:#33404f}.navlinks a:hover{color:var(--blue)}
+  .navcta{background:var(--blue);color:#fff!important;padding:9px 18px;border-radius:30px}
+  .pagehead{background:linear-gradient(135deg,#1F4E79,#2b6aa3);color:#fff;padding:48px 0}
+  .pagehead h1{font-size:32px;margin-bottom:6px}.pagehead p{opacity:.9}
+  .grid{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;margin:40px 0 60px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(20,40,80,.05)}
+  .card h2{color:var(--blue);font-size:21px;margin-bottom:6px}
+  .card .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  label{display:block;font-size:13.5px;font-weight:600;color:#33404f;margin:14px 0 5px}
+  input,select,textarea{width:100%;border:1px solid #d7dee8;border-radius:10px;padding:11px 13px;font-size:14.5px;font-family:inherit;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--acc)}
+  textarea{min-height:120px;resize:vertical}
+  .btn{margin-top:18px;background:var(--gold);color:#3a2c00;border:none;padding:13px 26px;border-radius:30px;font-weight:700;font-size:15px;cursor:pointer}
+  .btn:hover{background:#caa000}
+  .ok{display:none;background:#e9f7ef;border:1px solid #b7e0c6;color:#1d6b3c;border-radius:12px;padding:16px;margin-top:16px;font-size:14.5px}
+  .info-li{display:flex;gap:12px;align-items:flex-start;margin:14px 0;font-size:14.5px}
+  .info-li .ic{width:38px;height:38px;border-radius:9px;background:#EAF0F7;color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+  .info-li b{color:var(--blue)}
+  .social a{display:inline-block;margin-right:10px;margin-top:8px;background:#EAF0F7;color:var(--blue);padding:8px 14px;border-radius:30px;font-weight:600;font-size:13.5px}
+  footer{background:#13283f;color:#9fb3c9;padding:26px 0;font-size:12.5px;text-align:center}
+  footer a{color:#cdd8e6}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}.navlinks{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="topnav"><div class="wrap">
+  <a class="logo" href="index.html"><span class="logomark">PCS</span> Paris'Com Sup</a>
+  <div class="navlinks">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#formation">La formation</a>
+    <a href="index.html#pourquoi">Pourquoi nous</a>
+    <a href="index.html#avis">Avis</a>
+    <a href="veille.html">Veille</a>
+    <a class="navcta" href="contact.html">Candidater</a>
+  </div>
+</div></nav>
+
+<header class="pagehead"><div class="wrap">
+  <h1>Contact &amp; candidature</h1>
+  <p>Une question sur le Bachelor RPMC ou l'alternance ? Écris-nous, notre équipe te répond sous 24 h ouvrées.</p>
+</div></header>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="card">
+      <h2>Demande d'information / candidature</h2>
+      <div class="sub">Remplis le formulaire ci-dessous, nous revenons vers toi rapidement.</div>
+      <form id="cform" onsubmit="return submitForm(event)">
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <div style="flex:1;min-width:160px"><label>Prénom *</label><input required type="text" placeholder="Ton prénom"></div>
+          <div style="flex:1;min-width:160px"><label>Nom *</label><input required type="text" placeholder="Ton nom"></div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <div style="flex:1;min-width:160px"><label>Email *</label><input required type="email" placeholder="prenom@email.com"></div>
+          <div style="flex:1;min-width:160px"><label>Téléphone</label><input type="tel" placeholder="06 .. .. .. .."></div>
+        </div>
+        <label>Ton profil</label>
+        <select>
+          <option>Étudiant (poursuite d'études / BTS / Bac+2)</option>
+          <option>Personne en reconversion</option>
+          <option>Parent</option>
+          <option>Entreprise (alternance / partenariat)</option>
+        </select>
+        <label>Objet</label>
+        <select>
+          <option>Demande d'information sur le Bachelor</option>
+          <option>Candidature / dossier d'admission</option>
+          <option>Recherche d'alternance</option>
+          <option>Inscription à un webinaire / JPO</option>
+          <option>Brochure</option>
+        </select>
+        <label>Message</label>
+        <textarea placeholder="Ton message…"></textarea>
+        <button class="btn" type="submit">Envoyer ma demande</button>
+        <div class="ok" id="ok">✓ Merci, ta demande a bien été envoyée ! Notre équipe te recontacte sous 24 h ouvrées. (Démonstration — projet pédagogique, aucune donnée n'est réellement transmise.)</div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Nous joindre</h2>
+      <div class="sub">Établissement d'enseignement supérieur, Paris 12e.</div>
+      <div class="info-li"><div class="ic">@</div><div><b>Email</b><br>admissions@pariscomsup.fr</div></div>
+      <div class="info-li"><div class="ic">☎</div><div><b>Téléphone</b><br>01 23 45 67 89</div></div>
+      <div class="info-li"><div class="ic">⌖</div><div><b>Adresse</b><br>Paris 12e arrondissement</div></div>
+      <div class="info-li"><div class="ic">⏱</div><div><b>Horaires</b><br>Lun–Ven · 9h–18h</div></div>
+      <div style="margin-top:6px"><b style="color:var(--blue);font-size:14px">Suivre l'école</b>
+        <div class="social">
+          <a href="https://www.instagram.com/pariscom_sup" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@pariscomsup" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.linkedin.com/school/pariscomsup" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap">Site réalisé dans le cadre d'un projet pédagogique (Titre RNCP39974) — contenus et coordonnées illustratifs. · <a href="index.html">Accueil</a> · <a href="veille.html">Veille</a></div></footer>
+
+<script>
+function submitForm(e){e.preventDefault();document.getElementById("ok").style.display="block";document.getElementById("cform").querySelector("button").textContent="Demande envoyée ✓";window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});return false;}
+</script>
+</body>
+</html>
