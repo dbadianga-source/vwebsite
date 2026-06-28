@@ -5,204 +5,252 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paris'Com Sup — Bachelor Responsable Projet Webmarketing et Communication Digitale</title>
 <style>
-  :root{--blue:#1F4E79;--acc:#2E75B6;--gold:#E0A800;--bg:#F6F8FB;--ink:#1f2733;--muted:#6b7480;--line:#e6eaf0}
+  :root{--navy:#313f69;--orange:#e54224;--orange2:#cf3a1f;--ink:#2b2f38;--grey:#6b7280;--line:#ececf1;--soft:#fbeee9;--bg:#ffffff;}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
   a{text-decoration:none;color:inherit}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  /* logo */
+  .logo{display:flex;align-items:center;gap:9px}
+  .logo svg{width:26px;height:26px;flex:none}
+  .logo .lt{display:flex;flex-direction:column;line-height:1}
+  .logo .lt b{font-size:21px;font-weight:800;color:var(--navy);letter-spacing:.5px}
+  .logo .lt small{font-size:7.5px;letter-spacing:2px;color:#9aa0ad;display:flex;align-items:center;gap:5px;margin-top:2px}
+  .logo .sup{background:var(--orange);color:#fff;font-weight:800;padding:1px 4px;border-radius:2px;transform:skewX(-8deg);font-size:8px;letter-spacing:0}
   /* nav */
-  .topnav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 1px 8px rgba(20,40,80,.05)}
-  .topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--blue);font-size:18px}
-  .logomark{width:38px;height:38px;border-radius:9px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800}
-  .navlinks{display:flex;gap:22px;align-items:center;font-size:14.5px;font-weight:600}
-  .navlinks a{color:#33404f}.navlinks a:hover{color:var(--blue)}
-  .navcta{background:var(--blue);color:#fff!important;padding:9px 18px;border-radius:30px}
-  .navcta:hover{background:#163a5c}
+  .topnav{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+  .topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .navlinks{display:flex;gap:24px;align-items:center;font-size:14.5px;font-weight:600}
+  .navlinks a{color:#3a3f4a}.navlinks a:hover{color:var(--orange)}
+  .navbtns{display:flex;gap:10px}
+  .btn{display:inline-block;font-weight:700;font-size:14px;padding:11px 20px;border-radius:8px;cursor:pointer;border:none}
+  .btn-o{background:var(--orange);color:#fff}.btn-o:hover{background:var(--orange2)}
+  .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}.btn-ghost:hover{background:var(--navy);color:#fff}
+  .btn-white{background:#fff;color:var(--navy)}
   /* hero */
-  .hero{background:linear-gradient(135deg,#1F4E79,#2b6aa3);color:#fff;padding:70px 0 64px;position:relative;overflow:hidden}
-  .hero .tag{display:inline-block;background:rgba(255,255,255,.15);padding:6px 14px;border-radius:30px;font-size:13px;font-weight:600;letter-spacing:.5px}
-  .hero h1{font-size:40px;line-height:1.15;margin:16px 0 14px;max-width:760px}
-  .hero p{font-size:18px;opacity:.92;max-width:620px}
-  .hero .btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{padding:13px 26px;border-radius:30px;font-weight:700;font-size:15px;display:inline-block;cursor:pointer;border:none}
-  .btn-gold{background:var(--gold);color:#3a2c00}.btn-gold:hover{background:#caa000}
-  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.12)}
-  /* stats */
-  .stats{background:#fff;margin:-34px auto 0;position:relative;z-index:5;max-width:1000px;border-radius:16px;box-shadow:0 8px 26px rgba(20,40,80,.12);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
-  .stat{padding:22px;text-align:center;border-right:1px solid var(--line)}
-  .stat:last-child{border-right:none}
-  .stat .n{font-size:28px;font-weight:800;color:var(--blue)}
-  .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
+  .hero{position:relative;overflow:hidden;padding:64px 0 56px;background:#fff}
+  .hero .arrowbg{position:absolute;right:-60px;top:40px;width:520px;opacity:.06;z-index:0}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+  .kicker{display:flex;align-items:center;gap:8px;color:var(--orange);font-weight:800;font-size:18px;margin-bottom:14px}
+  .kicker svg{width:20px;height:20px}
+  .hero .sub{font-size:16px;color:var(--grey);margin-bottom:6px}
+  .hero h1{font-size:52px;line-height:1.05;color:var(--navy);font-weight:800;margin-bottom:2px}
+  .hero h1 .acc{color:var(--orange);display:block;font-size:34px;margin-top:6px}
+  .hero .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .heroimg{border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(49,63,105,.22);aspect-ratio:16/11}
+  .heroimg img{width:100%;height:100%;object-fit:cover}
   /* sections */
-  section{padding:60px 0}
-  .eyebrow{color:var(--acc);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
-  h2.title{font-size:30px;color:var(--blue);margin:8px 0 10px}
-  .lead{color:#46505e;font-size:16.5px;max-width:760px}
-  .alt{background:var(--bg)}
-  /* formation grid */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:30px}
-  .skill{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
-  .skill .ic{width:42px;height:42px;border-radius:10px;background:#EAF0F7;color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin-bottom:10px}
-  .skill h3{font-size:16px;color:var(--blue);margin-bottom:4px}
-  .skill p{font-size:14px;color:#54606e}
-  /* strategy cards */
-  .strats{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:30px}
-  .strat{background:#fff;border-radius:14px;padding:24px;border-top:4px solid var(--acc);box-shadow:0 4px 16px rgba(20,40,80,.06)}
-  .strat .num{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:1px}
-  .strat h3{font-size:18px;color:var(--blue);margin:6px 0 8px}
-  .strat p{font-size:14.5px;color:#54606e}
-  /* metiers */
-  .metiers{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-  .metier{background:#fff;border:1px solid var(--line);border-radius:30px;padding:10px 18px;font-weight:600;font-size:14px;color:#33404f}
+  section{padding:64px 0}
+  .eyebrow{text-align:center;color:var(--orange);font-weight:800;letter-spacing:2px;font-size:13px;text-transform:uppercase}
+  h2.sectitle{text-align:center;font-size:34px;color:var(--navy);font-weight:800;margin:8px 0 10px}
+  .lead{text-align:center;color:var(--grey);max-width:720px;margin:0 auto 36px;font-size:16px}
+  /* poles */
+  .poles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .pole{position:relative;border-radius:16px;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;box-shadow:0 8px 24px rgba(49,63,105,.14)}
+  .pole img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .pole .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(49,63,105,.25),rgba(49,63,105,.86));z-index:1}
+  .pole .c{position:relative;z-index:2;padding:22px}
+  .pole h3{font-size:20px;font-weight:800;margin-bottom:6px}
+  .pole p{font-size:13.5px;opacity:.92;margin-bottom:12px}
+  .pill{display:inline-block;border:1.5px solid var(--orange);color:#fff;background:rgba(229,66,36,.25);font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:30px;margin-bottom:12px}
+  .pole .disc{display:inline-block;background:#fff;color:var(--orange);font-weight:700;font-size:13px;padding:7px 16px;border-radius:8px}
+  /* stats band */
+  .statband{position:relative;background:var(--navy);color:#fff;border-radius:18px;padding:46px 30px;overflow:hidden}
+  .statband h2{text-align:center;color:#fff;font-size:30px;font-weight:800;margin-bottom:6px}
+  .statband .l{text-align:center;opacity:.85;margin-bottom:30px;font-size:15px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .stat{text-align:center}
+  .stat .n{font-size:46px;font-weight:800}
+  .stat .t{color:var(--orange);font-weight:700;font-size:14px;margin-top:2px}
+  /* confiance */
+  .confiance{text-align:center}
+  .partners{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:42px;margin-top:30px;background:#fafafb;border:1px solid var(--line);border-radius:16px;padding:26px 30px}
+  .partners img{height:48px;width:auto;max-width:150px;object-fit:contain;transition:.2s;filter:grayscale(15%)}
+  .partners img:hover{filter:none;transform:scale(1.05)}
+  /* IA banner */
+  .iabanner{background:var(--navy);color:#fff;border-radius:18px;padding:40px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
+  .iabanner .big{font-size:54px;font-weight:800;color:#fff}
+  .iabanner .tx{font-size:24px;font-weight:700;text-align:left}
+  .iabanner svg{width:54px;height:54px}
+  /* differenciation */
+  .diff{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .dcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;transition:.15s}
+  .dcard:hover{box-shadow:0 10px 26px rgba(49,63,105,.1);transform:translateY(-3px)}
+  .dnum{color:var(--orange);font-weight:800;font-size:13px;letter-spacing:1px}
+  .dcard h3{color:var(--navy);font-size:18px;margin:6px 0 8px}
+  .dcard p{color:var(--grey);font-size:14.5px}
   /* avis */
-  .ratingbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#fff;border-radius:14px;padding:20px 24px;box-shadow:0 4px 16px rgba(20,40,80,.06);margin-top:24px}
-  .ratingbar .big{font-size:42px;font-weight:800;color:var(--blue)}
-  .stars{color:var(--gold);font-size:20px;letter-spacing:2px}
-  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:24px}
-  .review{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
-  .review .who{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-  .avatar{width:46px;height:46px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
-  .review .who .nm{font-weight:700;font-size:15px}
-  .review .who .role{font-size:12.5px;color:var(--muted)}
-  .review .q{font-size:14.5px;color:#3a4654}
-  .review .st{color:var(--gold);font-size:15px;margin-bottom:8px}
-  /* CTA band */
-  .ctaband{background:linear-gradient(135deg,#1F4E79,#2b6aa3);color:#fff;text-align:center;border-radius:18px;padding:46px 24px;margin:10px 0}
-  .ctaband h2{font-size:28px;margin-bottom:8px}
-  .ctaband p{opacity:.9;margin-bottom:22px}
+  .avis-head{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:26px}
+  .avis-head .score{font-size:46px;font-weight:800;color:var(--navy)}
+  .stars{color:var(--orange);font-size:20px;letter-spacing:2px}
+  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .review{background:var(--soft);border-radius:14px;padding:24px}
+  .review .st{color:var(--orange);font-size:15px;margin-bottom:8px}
+  .review .q{font-size:14.5px;color:#41464f;font-style:italic;margin-bottom:14px}
+  .review .who{display:flex;align-items:center;gap:12px}
+  .review .av{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .review .nm{font-weight:700;font-size:14px;color:var(--navy)}
+  .review .role{font-size:12px;color:var(--grey)}
+  /* brochure CTA */
+  .brochure{background:var(--orange);color:#fff;border-radius:18px;padding:50px;text-align:center}
+  .brochure h2{font-size:34px;font-weight:800;color:#fff;margin-bottom:10px}
+  .brochure p{opacity:.95;max-width:640px;margin:0 auto 22px}
   /* footer */
-  footer{background:#13283f;color:#cdd8e6;padding:46px 0 22px;font-size:14px}
-  footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
-  footer h4{color:#fff;font-size:15px;margin-bottom:12px}
-  footer a{color:#cdd8e6}footer a:hover{color:#fff}
-  footer .foot-li{margin:6px 0}
-  .disclaimer{border-top:1px solid #24405e;margin-top:28px;padding-top:16px;font-size:12.5px;color:#8aa0ba;text-align:center}
-  @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.navlinks{display:none}.hero h1{font-size:30px}}
+  footer{background:var(--navy);color:#cdd3e0;padding:50px 0 24px;margin-top:20px;font-size:14px}
+  footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+  footer h4{color:#fff;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;color:#f0c0b4}
+  footer a:hover{color:#fff}
+  footer .fl{margin:7px 0}
+  .footlogo .lt b{color:#fff}.footlogo .lt small{color:#aeb6c8}
+  .social{display:flex;gap:10px;margin-top:14px}
+  .social a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+  .badges{margin-top:14px;font-size:12px;color:#9aa3b8}
+  .certs{display:flex;gap:16px;align-items:center;background:#fff;border-radius:12px;padding:12px 18px;margin-top:16px;width:fit-content;max-width:100%;flex-wrap:wrap}
+  .certs img{height:52px;width:auto;object-fit:contain}
+  .disclaimer{border-top:1px solid #43507a;margin-top:26px;padding-top:16px;text-align:center;font-size:12px;color:#8a92ab}
+  @media(max-width:880px){.navlinks,.navbtns{display:none}.hero .wrap{grid-template-columns:1fr}.hero h1{font-size:38px}.stats{grid-template-columns:repeat(2,1fr);gap:24px}.iabanner{flex-direction:column}.iabanner .tx{text-align:center}footer .cols{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 
 <nav class="topnav"><div class="wrap">
-  <a class="logo" href="index.html"><span class="logomark">PCS</span> Paris'Com Sup</a>
+  <a class="logo" href="index.html"><img src="img/Pariscom.png" alt="Paris'Com Sup" style="height:48px;display:block"></a>
   <div class="navlinks">
     <a href="index.html">Accueil</a>
     <a href="index.html#formation">La formation</a>
     <a href="index.html#pourquoi">Pourquoi nous</a>
     <a href="index.html#avis">Avis</a>
     <a href="veille.html">Veille</a>
-    <a class="navcta" href="contact.html">Candidater</a>
+  </div>
+  <div class="navbtns">
+    <a class="btn btn-ghost" href="contact.html">Brochure</a>
+    <a class="btn btn-o" href="contact.html">Candidature</a>
   </div>
 </div></nav>
 
-<header class="hero"><div class="wrap">
-  <span class="tag">École de communication · 36 Rue Merlin, 75011 Paris</span>
-  <h1>Bachelor Responsable Projet Webmarketing et Communication Digitale</h1>
-  <p>Forme-toi aux métiers du digital à Paris : pédagogie concrète, projets réels, alternance et accompagnement vers l'employabilité. Rentrée de septembre 2027.</p>
-  <div class="btns">
-    <a class="btn btn-gold" href="contact.html">Candidater pour 2027</a>
-    <a class="btn btn-ghost" href="contact.html">Télécharger la brochure</a>
+<header class="hero">
+  <svg class="arrowbg" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><path d="M14 2 L26 26 L14 19.5 L2 26 Z" fill="#e54224"/></svg>
+  <div class="wrap">
+    <div>
+      <div class="kicker"><svg viewBox="0 0 28 28"><path d="M14 2 L26 26 L14 19.5 L2 26 Z" fill="#e54224"/></svg> Learning by Doing</div>
+      <div class="sub">De Post-Bac à Bac+5, rejoignez le programme fait pour vous</div>
+      <h1>Bachelor Responsable Projet Webmarketing &amp; Communication Digitale<span class="acc">Deviens opérationnel dès ta 1re année.</span></h1>
+      <div class="cta">
+        <a class="btn btn-ghost" href="contact.html">Brochure</a>
+        <a class="btn btn-o" href="contact.html">Candidature</a>
+      </div>
+    </div>
+    <div class="heroimg"><img src="img/linkedin.jpg" alt="Étudiants Paris'Com Sup"></div>
   </div>
-</div></header>
-
-<div class="wrap">
-  <div class="stats">
-    <div class="stat"><div class="n">2 000+</div><div class="l">diplômés</div></div>
-    <div class="stat"><div class="n">92 %</div><div class="l">d'embauche en 6 mois</div></div>
-    <div class="stat"><div class="n">94 %</div><div class="l">de satisfaction</div></div>
-    <div class="stat"><div class="n">60+</div><div class="l">intervenants pros</div></div>
-  </div>
-</div>
+</header>
 
 <section id="formation"><div class="wrap">
-  <span class="eyebrow">La formation</span>
-  <h2 class="title">Un Bachelor pensé pour te rendre opérationnel</h2>
-  <p class="lead">En alternance comme en initial, tu apprends à créer, piloter et mesurer des contenus et des campagnes digitales, dans une logique professionnalisante proche des usages des entreprises.</p>
-  <div class="skills">
-    <div class="skill"><div class="ic">SEO</div><h3>Référencement &amp; acquisition</h3><p>SEO, SEA, Google &amp; Meta Ads, stratégie d'acquisition multicanale.</p></div>
-    <div class="skill"><div class="ic">SM</div><h3>Social media &amp; contenu</h3><p>Création de contenus, community management, formats vidéo, storytelling.</p></div>
-    <div class="skill"><div class="ic">IA</div><h3>IA appliquée</h3><p>Outils d'IA générative pour la production, la veille et la performance.</p></div>
-    <div class="skill"><div class="ic">📊</div><h3>Data &amp; performance</h3><p>Analyse, KPI, tableaux de bord et pilotage de la performance digitale.</p></div>
-    <div class="skill"><div class="ic">PM</div><h3>Gestion de projet</h3><p>Méthodologie agile, cahier des charges, coordination et reporting.</p></div>
-    <div class="skill"><div class="ic">🎓</div><h3>Alternance</h3><p>Missions réelles en entreprise et accompagnement à la recherche d'alternance.</p></div>
+  <div class="eyebrow">Une formation complète</div>
+  <h2 class="sectitle">Ce que tu apprends</h2>
+  <p class="lead">En alternance comme en initial, des compétences directement utiles en entreprise, avec l'IA intégrée au programme.</p>
+  <div class="poles">
+    <div class="pole"><img src="img/insta.jpg" alt=""><div class="ov"></div><div class="c"><span class="pill">✦ IA intégrée au programme</span><h3>Social media &amp; contenu</h3><p>Création de contenus, community management, formats vidéo, storytelling.</p><a class="disc" href="contact.html">Découvrir</a></div></div>
+    <div class="pole"><img src="img/linkedin.jpg" alt=""><div class="ov"></div><div class="c"><span class="pill">✦ IA intégrée au programme</span><h3>Acquisition &amp; performance</h3><p>SEO, SEA, Google &amp; Meta Ads, data et analyse de la performance.</p><a class="disc" href="contact.html">Découvrir</a></div></div>
+    <div class="pole"><img src="img/tiktok.jpg" alt=""><div class="ov"></div><div class="c"><span class="pill">✦ IA intégrée au programme</span><h3>Production audiovisuelle</h3><p>Vidéo, motion design, podcast, formats courts et coulisses de campus.</p><a class="disc" href="contact.html">Découvrir</a></div></div>
+    <div class="pole"><img src="img/podcast.jpg" alt=""><div class="ov"></div><div class="c"><span class="pill">✦ IA intégrée au programme</span><h3>Gestion de projet</h3><p>Méthodologie agile, cahier des charges, pilotage et reporting.</p><a class="disc" href="contact.html">Découvrir</a></div></div>
   </div>
 </div></section>
 
-<section id="pourquoi" class="alt"><div class="wrap">
-  <span class="eyebrow">Notre stratégie de différenciation</span>
-  <h2 class="title">Pourquoi nous choisir — comment nous attirons nos talents</h2>
-  <p class="lead">Notre campagne de recrutement repose sur des leviers de différenciation clairs, pensés pour attirer les futurs étudiants et alternants et les convertir en candidatures.</p>
-  <div class="strats">
-    <div class="strat"><div class="num">STRATÉGIE 01</div><h3>Promesse d'employabilité concrète</h3><p>On parle moins de « formation » et davantage de transformation en profil opérationnel : 92 % d'embauche, des débouchés clairs et des preuves de réussite.</p></div>
-    <div class="strat"><div class="num">STRATÉGIE 02</div><h3>Alternance &amp; réseau d'entreprises</h3><p>Des missions réelles (réseaux sociaux, branding, ads) chez nos partenaires — comme Auchan — et un accompagnement personnalisé vers le contrat d'alternance.</p></div>
-    <div class="strat"><div class="num">STRATÉGIE 03</div><h3>Accompagnement individualisé</h3><p>Une école à taille humaine : suivi personnalisé, portfolio, coaching, et une réponse rapide à chaque candidat. La proximité comme signature.</p></div>
-    <div class="strat"><div class="num">STRATÉGIE 04</div><h3>Expertise digitale &amp; IA actuelle</h3><p>L'IA générative et les outils du marché enseignés comme compétences appliquées : content marketing, veille, publicité, analyse.</p></div>
-    <div class="strat"><div class="num">STRATÉGIE 05</div><h3>Preuve par l'expérience</h3><p>Témoignages d'alternants, projets réalisés, coulisses pédagogiques et vie de campus : une communication authentique, loin du discours institutionnel.</p></div>
-    <div class="strat"><div class="num">STRATÉGIE 06</div><h3>Contenus utiles &amp; tunnel d'acquisition</h3><p>SEO local, formats courts (Reels, TikTok), webinaires, lead magnets et marketing automation pour accompagner chaque candidat jusqu'à l'inscription.</p></div>
+<section style="padding-top:0"><div class="wrap">
+  <div class="statband">
+    <h2>Intégrez une école qui fait la différence</h2>
+    <div class="l">Découvrez Paris'Com Sup en chiffres et rejoignez une communauté en pleine expansion !</div>
+    <div class="stats">
+      <div class="stat"><div class="n">2 000+</div><div class="t">Étudiants diplômés</div></div>
+      <div class="stat"><div class="n">92 %</div><div class="t">d'embauches en 6 mois</div></div>
+      <div class="stat"><div class="n">60+</div><div class="t">Intervenants</div></div>
+      <div class="stat"><div class="n">94 %</div><div class="t">Satisfaction</div></div>
+    </div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <span class="eyebrow">Débouchés</span>
-  <h2 class="title">Les métiers que tu pourras viser</h2>
-  <div class="metiers">
-    <span class="metier">Community Manager</span>
-    <span class="metier">Social Media Manager</span>
-    <span class="metier">Chargé de communication digitale</span>
-    <span class="metier">Chef de projet digital</span>
-    <span class="metier">Traffic Manager</span>
-    <span class="metier">Content Manager</span>
-    <span class="metier">Chargé d'acquisition / SEA</span>
+<section class="confiance" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Ils nous font confiance</div>
+  <h2 class="sectitle">Nos entreprises partenaires</h2>
+  <div class="partners">
+    <img src="img/p-auchan.png" alt="Auchan">
+    <img src="img/p-carrefour.png" alt="Carrefour">
+    <img src="img/p-saintgobain.png" alt="Saint-Gobain">
+    <img src="img/p-sncf.png" alt="SNCF">
+    <img src="img/p-orange.png" alt="Orange">
+    <img src="img/p-axa.png" alt="AXA">
+    <img src="img/p-ikea.png" alt="Ikea">
+    <img src="img/p-conforama.png" alt="Conforama">
+    <img src="img/p-laduree.png" alt="Ladurée Paris">
+    <img src="img/p-cercles.png" alt="Cercles de la Forme">
+    <img src="img/p-ucpa.png" alt="UCPA">
+    <img src="img/p-assurimo.png" alt="Assurimo">
   </div>
 </div></section>
 
-<section id="avis" class="alt"><div class="wrap">
-  <span class="eyebrow">Ils témoignent</span>
-  <h2 class="title">Avis de nos étudiants &amp; alternants</h2>
-  <div class="ratingbar">
-    <div class="big">4,5</div>
-    <div><div class="stars">★★★★★</div><div style="font-size:13px;color:var(--muted)">Note moyenne · 226 avis Google</div></div>
-    <div style="margin-left:auto;font-size:13px;color:var(--muted)">96 % recommandent l'école</div>
+<section style="padding-top:0"><div class="wrap">
+  <div class="iabanner">
+    <svg viewBox="0 0 28 28"><path d="M14 2 L26 26 L14 19.5 L2 26 Z" fill="#e54224"/></svg>
+    <div><span class="big">100 %</span></div>
+    <div class="tx">de nos étudiants sont formés à l'IA</div>
+  </div>
+</div></section>
+
+<section id="pourquoi"><div class="wrap">
+  <div class="eyebrow">Pourquoi nous choisir</div>
+  <h2 class="sectitle">Notre stratégie de différenciation</h2>
+  <p class="lead">Des leviers pensés pour attirer les futurs étudiants et alternants et les convertir en candidatures.</p>
+  <div class="diff">
+    <div class="dcard"><div class="dnum">01</div><h3>Employabilité concrète</h3><p>92 % d'embauche, débouchés clairs et preuves de réussite.</p></div>
+    <div class="dcard"><div class="dnum">02</div><h3>Alternance &amp; réseau</h3><p>Missions réelles chez nos partenaires et accompagnement vers le contrat.</p></div>
+    <div class="dcard"><div class="dnum">03</div><h3>Accompagnement individualisé</h3><p>Une école à taille humaine, un suivi personnalisé, une réponse rapide.</p></div>
+    <div class="dcard"><div class="dnum">04</div><h3>Expertise IA actuelle</h3><p>L'IA générative enseignée comme compétence appliquée au métier.</p></div>
+    <div class="dcard"><div class="dnum">05</div><h3>Preuve par l'expérience</h3><p>Témoignages, projets réalisés, coulisses et vie de campus.</p></div>
+    <div class="dcard"><div class="dnum">06</div><h3>Tunnel d'acquisition</h3><p>SEO, social, webinaires et marketing automation jusqu'à l'inscription.</p></div>
+  </div>
+</div></section>
+
+<section id="avis" style="background:#faf7f6"><div class="wrap">
+  <div class="eyebrow">Retour d'expérience</div>
+  <h2 class="sectitle">Ils en parlent</h2>
+  <div class="avis-head">
+    <span class="score">4,5</span>
+    <div><div class="stars">★★★★★</div><div style="font-size:13px;color:var(--grey)">226 avis Google · 96 % recommandent l'école</div></div>
   </div>
   <div class="reviews">
-    <div class="review"><div class="st">★★★★★</div><div class="who"><div class="avatar">LM</div><div><div class="nm">Léa M.</div><div class="role">3e année · Alternante chez Auchan</div></div></div><div class="q">« J'avais peur d'une école “vitrine”. Au final, on bosse sur de vrais projets et j'ai trouvé mon alternance en 3 semaines grâce au suivi. »</div></div>
-    <div class="review"><div class="st">★★★★★</div><div class="who"><div class="avatar">KB</div><div><div class="nm">Karim B.</div><div class="role">Reconversion · Chargé d'acquisition</div></div></div><div class="q">« Je venais d'un tout autre domaine. L'accompagnement et les projets concrets m'ont permis de me reconvertir sereinement dans le digital. »</div></div>
-    <div class="review"><div class="st">★★★★★</div><div class="who"><div class="avatar">SR</div><div><div class="nm">Sofia R.</div><div class="role">Diplômée 2025 · Social Media Manager</div></div></div><div class="q">« Les compétences sont directement utiles en entreprise : social media, ads, analyse. J'ai été embauchée à la fin de mon alternance. »</div></div>
-    <div class="review"><div class="st">★★★★☆</div><div class="who"><div class="avatar">TD</div><div><div class="nm">Thomas D.</div><div class="role">2e année · Alternant Traffic Manager</div></div></div><div class="q">« Très bonne ambiance et des intervenants qui bossent vraiment dans le métier. La partie IA est un vrai plus sur le marché. »</div></div>
-    <div class="review"><div class="st">★★★★★</div><div class="who"><div class="avatar">IK</div><div><div class="nm">Inès K.</div><div class="role">Diplômée · Community Manager</div></div></div><div class="q">« Le portfolio qu'on construit pendant la formation fait la différence en entretien. Je recommande à 100 %. »</div></div>
-    <div class="review"><div class="st">★★★★★</div><div class="who"><div class="avatar">MP</div><div><div class="nm">Marc P.</div><div class="role">Parent d'élève</div></div></div><div class="q">« Une équipe disponible et transparente sur les débouchés. Ma fille s'épanouit et a déjà une entreprise d'accueil. »</div></div>
+    <div class="review"><div class="st">★★★★★</div><div class="q">« J'avais peur d'une école “vitrine”. Au final on bosse sur de vrais projets et j'ai trouvé mon alternance en 3 semaines. »</div><div class="who"><div class="av">LM</div><div><div class="nm">Léa M.</div><div class="role">Alternante chez Auchan</div></div></div></div>
+    <div class="review"><div class="st">★★★★★</div><div class="q">« Les projets concrets et l'accompagnement m'ont permis de me reconvertir sereinement dans le digital. »</div><div class="who"><div class="av">KB</div><div><div class="nm">Karim B.</div><div class="role">Reconversion · Chargé d'acquisition</div></div></div></div>
+    <div class="review"><div class="st">★★★★★</div><div class="q">« Les compétences sont directement utiles en entreprise. J'ai été embauchée à la fin de mon alternance. »</div><div class="who"><div class="av">SR</div><div><div class="nm">Sofia R.</div><div class="role">Diplômée 2025 · Social Media Manager</div></div></div></div>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="ctaband">
-    <h2>Prêt à transformer ton potentiel en carrière ?</h2>
-    <p>Rejoins le Bachelor RPMC de Paris'Com Sup pour la rentrée de septembre 2027.</p>
-    <a class="btn btn-gold" href="contact.html">Je candidate</a>
+  <div class="brochure">
+    <h2>Recevoir la brochure</h2>
+    <p>Vous souhaitez en savoir plus sur le Bachelor RPMC ? Recevez notre brochure et découvrez tout ce que Paris'Com Sup peut vous offrir pour réussir votre avenir professionnel.</p>
+    <a class="btn btn-white" href="contact.html" style="padding:13px 30px;font-size:15px">Télécharger</a>
   </div>
 </div></section>
 
 <footer><div class="wrap">
   <div class="cols">
     <div>
-      <h4>Paris'Com Sup</h4>
-      <div class="foot-li">Bachelor Responsable Projet Webmarketing et Communication Digitale</div>
-      <div class="foot-li">36 Rue Merlin, 75011 Paris</div>
-      <div class="foot-li">01 84 79 16 40</div>
+      <img src="img/logo.png" alt="Paris'Com Sup" style="height:62px;display:block">
+      <div class="fl" style="margin-top:14px">Bachelor Responsable Projet Webmarketing et Communication Digitale</div>
+      <div class="fl">36 Rue Merlin, 75011 Paris · 01 84 79 16 40</div>
+      <div class="social">
+        <a href="https://www.instagram.com/pariscom_sup" target="_blank" rel="noopener">IG</a>
+        <a href="https://www.tiktok.com/@pariscomsup" target="_blank" rel="noopener">TT</a>
+        <a href="https://www.linkedin.com/school/pariscomsup" target="_blank" rel="noopener">in</a>
+      </div>
+      <div class="certs">
+        <img src="img/qualiopi.png" alt="Qualiopi — processus certifié">
+        <img src="img/france-competences.png" alt="France Compétences — enregistrée au RNCP">
+      </div>
     </div>
-    <div>
-      <h4>Navigation</h4>
-      <div class="foot-li"><a href="index.html#formation">La formation</a></div>
-      <div class="foot-li"><a href="index.html#pourquoi">Pourquoi nous choisir</a></div>
-      <div class="foot-li"><a href="veille.html">Veille</a></div>
-      <div class="foot-li"><a href="contact.html">Contact &amp; candidature</a></div>
-    </div>
-    <div>
-      <h4>Nous suivre</h4>
-      <div class="foot-li"><a href="https://www.instagram.com/pariscom_sup" target="_blank" rel="noopener">Instagram</a></div>
-      <div class="foot-li"><a href="https://www.tiktok.com/@pariscomsup" target="_blank" rel="noopener">TikTok</a></div>
-      <div class="foot-li"><a href="https://www.linkedin.com/school/pariscomsup" target="_blank" rel="noopener">LinkedIn</a></div>
-    </div>
+    <div><h4>Nos formations</h4><div class="fl"><a href="index.html#formation">Communication</a></div><div class="fl"><a href="index.html#formation">Marketing</a></div><div class="fl"><a href="index.html#formation">Audiovisuel</a></div></div>
+    <div><h4>Étudiants</h4><div class="fl"><a href="contact.html">Admission</a></div><div class="fl"><a href="index.html#avis">Témoignages</a></div><div class="fl"><a href="veille.html">Veille</a></div></div>
+    <div><h4>Ressources</h4><div class="fl"><a href="contact.html">Contact</a></div><div class="fl"><a href="contact.html">Brochure</a></div><div class="fl"><a href="contact.html">Candidature</a></div></div>
   </div>
   <div class="disclaimer">Site réalisé dans le cadre d'un projet pédagogique (Titre RNCP39974). Témoignages, avis et coordonnées présentés à titre illustratif.</div>
 </div></footer>
