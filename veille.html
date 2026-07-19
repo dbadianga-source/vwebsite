@@ -22,7 +22,7 @@
   .hero h1{font-size:32px;font-weight:800;margin:12px 0 6px}
   .hero p{opacity:.9;font-size:15px;max-width:760px}
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:-28px 0 26px;position:relative;z-index:5}
-  .kpis{.kpi{background:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 6px 20px rgba(49,63,105,.09);display:flex;align-items:center;gap:13px}}
+  .kpi{background:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 6px 20px rgba(49,63,105,.09);display:flex;align-items:center;gap:13px}
   .kpi .ic{width:46px;height:46px;border-radius:12px;background:var(--soft);color:var(--orange);display:flex;align-items:center;justify-content:center;flex:none}
   .kpi .ic svg{width:23px;height:23px}
   .kpi .n{font-size:21px;font-weight:800;color:var(--navy);line-height:1.1}
@@ -85,7 +85,7 @@
 <body>
 
 <nav class="topnav"><div class="nw">
-  <a class="logo" href="index.html"><img src="Pariscom.png" alt="Paris'Com Sup" style="height:46px;display:block"></a>
+  <a class="logo" href="index.html"><img src="img/Pariscom.png" alt="Paris'Com Sup" style="height:46px;display:block"></a>
   <div class="navlinks">
     <a href="index.html">Accueil</a>
     <a href="index.html#formation">La formation</a>
@@ -159,6 +159,58 @@
   </div>
 </div>
 
+<div class="wrap">
+
+  <div class="panel">
+    <h2 class="sect"><span class="dot"></span>Méthodologie de veille</h2>
+    <p class="muted" style="margin:4px 0 14px">Une démarche hebdomadaire structurée en quatre temps.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:12px">
+      <div style="background:#f4f7fb;border-radius:12px;padding:14px"><div style="font-weight:800;color:var(--orange)">1 · Collecte</div><div style="font-size:13px;color:#33404f;margin-top:6px">Google Alerts, Feedly, Google News, LinkedIn, Instagram, TikTok, sites concurrents.</div></div>
+      <div style="background:#f4f7fb;border-radius:12px;padding:14px"><div style="font-weight:800;color:var(--orange)">2 · Analyse</div><div style="font-size:13px;color:#33404f;margin-top:6px">Classement par pratiques, innovations, technologies ; opportunités et menaces.</div></div>
+      <div style="background:#f4f7fb;border-radius:12px;padding:14px"><div style="font-weight:800;color:var(--orange)">3 · Synthèse</div><div style="font-size:13px;color:#33404f;margin-top:6px">Information observée &rarr; impact &rarr; recommandation.</div></div>
+      <div style="background:#f4f7fb;border-radius:12px;padding:14px"><div style="font-weight:800;color:var(--orange)">4 · Diffusion</div><div style="font-size:13px;color:#33404f;margin-top:6px">Note de veille mensuelle, tableau de bord, réunion marketing, rapport direction.</div></div>
+    </div>
+  </div>
+
+  <div class="dashrow">
+    <div class="panel">
+      <h2 class="sect"><span class="dot"></span>Critères de veille</h2>
+      <ul style="margin:8px 0 0;padding-left:18px;font-size:14px;line-height:1.9;color:#33404f">
+        <li><b>Concurrence</b> — offres de formation, communication, campagnes publicitaires</li>
+        <li><b>Pratiques</b> — SEO, SEA, réseaux sociaux, événements, alternance</li>
+        <li><b>Technologies</b> — CRM, IA, chatbot, CMS, Google Analytics</li>
+        <li><b>Usages</b> — comportement des étudiants, formats de contenu, réseaux utilisés</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2 class="sect"><span class="dot"></span>Outils mobilisés</h2>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px">
+        <span class="pill">Google Alerts</span><span class="pill">Feedly</span><span class="pill">Talkwalker</span><span class="pill">Google News</span><span class="pill">Google Trends</span><span class="pill">SEMrush</span><span class="pill">Similarweb</span><span class="pill">Meta Ad Library</span><span class="pill">LinkedIn</span><span class="pill">TikTok</span>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:13px">Alertes, mentions, SEO, trafic, publicités et tendances vidéo des écoles concurrentes.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2 class="sect"><span class="dot"></span>Tableau de bord mensuel</h2>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px;min-width:560px">
+        <thead><tr style="background:var(--navy);color:#fff">
+          <th style="text-align:left;padding:10px 12px">Date</th><th style="text-align:left;padding:10px 12px">Information</th><th style="text-align:left;padding:10px 12px">Source</th><th style="text-align:left;padding:10px 12px">Impact</th><th style="text-align:left;padding:10px 12px">Action</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #e6eaf0"><td style="padding:10px 12px"><b>Avril</b></td><td style="padding:10px 12px">Nouveau Bachelor IA</td><td style="padding:10px 12px">Site concurrent</td><td style="padding:10px 12px;color:#cf3a1f;font-weight:700">Fort</td><td style="padding:10px 12px">Valoriser nos modules IA</td></tr>
+          <tr style="border-bottom:1px solid #e6eaf0;background:#f9fbfd"><td style="padding:10px 12px"><b>Avril</b></td><td style="padding:10px 12px">Campagne TikTok</td><td style="padding:10px 12px">TikTok</td><td style="padding:10px 12px;color:#d98324;font-weight:700">Moyen</td><td style="padding:10px 12px">Développer des Reels</td></tr>
+          <tr style="border-bottom:1px solid #e6eaf0"><td style="padding:10px 12px"><b>Mai</b></td><td style="padding:10px 12px">Nouvelle JPO virtuelle</td><td style="padding:10px 12px">LinkedIn</td><td style="padding:10px 12px;color:#d98324;font-weight:700">Moyen</td><td style="padding:10px 12px">Organiser un Live Instagram</td></tr>
+          <tr style="background:#f9fbfd"><td style="padding:10px 12px"><b>Mai</b></td><td style="padding:10px 12px">Nouvel article SEO</td><td style="padding:10px 12px">Google</td><td style="padding:10px 12px;color:#cf3a1f;font-weight:700">Fort</td><td style="padding:10px 12px">Publier davantage d'articles</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
 <footer><div class="wrap" style="padding-bottom:0">Site réalisé dans le cadre d'un projet pédagogique (Titre RNCP39974) — contenus illustratifs. · <a href="index.html">Accueil</a> · <a href="contact.html">Contact</a></div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
@@ -191,7 +243,7 @@ const DATA=[
   {axe:"tend",titre:"Vidéo : le format long progresse",info:"50 % du temps TikTok sur des vidéos > 1 min ; YouTube 60 % > 10 min.",interet:"h",action:"Produire des formats immersifs plus longs.",src:"Études 2026",url:"https://swello.com/fr/blog/tendances-reseaux-sociaux-2026/"},
   {axe:"tend",titre:"GEO — la recherche bascule vers l'IA",info:"La recherche traditionnelle pourrait reculer de 25 % au profit des IA (Gartner).",interet:"h",action:"Optimiser les pages pour être cités par les moteurs IA.",src:"Tendances 2026",url:"https://almcorp.com/blog/digital-marketing-trends-2026/"},
   {axe:"tend",titre:"Authenticité contre l'uniformité IA",info:"La Gen Z détecte le contenu générique produit en masse par l'IA.",interet:"m",action:"Privilégier témoignages réels et voix humaine.",src:"Médias sociaux 2026",url:"https://lafusee.net/tendances-medias-sociaux-2026-les-6-incontournables/"},
-  {axe:"tend",titre:"Micro-influenceurs en hausse",info:"61 % des marketeurs augmentent leurs budgets d'influence in 2026.",interet:"m",action:"Partenariats avec micro-influenceurs étudiants et alumni.",src:"Kantar / 2026",url:"https://jixart.fr/blog/tendances-reseaux-sociaux-2026/"},
+  {axe:"tend",titre:"Micro-influenceurs en hausse",info:"61 % des marketeurs augmentent leurs budgets d'influence en 2026.",interet:"m",action:"Partenariats avec micro-influenceurs étudiants et alumni.",src:"Kantar / 2026",url:"https://jixart.fr/blog/tendances-reseaux-sociaux-2026/"},
   {axe:"tend",titre:"RSE : la preuve plutôt que le discours",info:"65 % se méfient des messages RSE mal justifiés ; règles UE durcies.",interet:"m",action:"Prouver concrètement nos engagements (accessibilité, inclusion).",src:"Tendances 2026",url:"https://www.taliju.fr/tendances-marketing-2026"}
 ];
 const AX={conc:{lbl:"Concurrence",ic:I_TARGET,col:"#7c5cbf"},sect:{lbl:"Secteur & métiers",ic:I_BARS,col:"#2f74c0"},erep:{lbl:"E-réputation",ic:I_STAR,col:"#1aa179"},tend:{lbl:"Tendances & SEO",ic:I_TREND,col:"#e08a17"}};
